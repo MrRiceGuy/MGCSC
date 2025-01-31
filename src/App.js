@@ -37,7 +37,7 @@ function App() {
             <h1>Building Resilience for Health Equity</h1>
 
             <div className='meetwithus'><a href ='https://calendly.com/mgalaviz21'>Meet with Us</a></div>
-            <div className='meetwithus'><a href =''>Meet Our Team</a></div>
+           {/*<div className='meetwithus'><a href =''>Meet Our Team</a></div> */}
           </div>
 
           <div className='section-2'>
@@ -102,7 +102,7 @@ function App() {
                   </ul>
 
                   <div className='help-button'>
-                    <a href =''>More</a>
+                  {/* <a href =''>More</a>*/} 
                   </div>
                 
                 </div>
