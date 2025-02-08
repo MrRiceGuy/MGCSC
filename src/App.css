@@ -91,35 +91,6 @@ a {
   z-index: 3;
   height: auto;
   width: 100%;
-  transform: translateY(-100%);
-  animation: rollDown 0.5s ease-in-out forwards;
-
-}
-
-.bios-container.closing {
-  animation: rollUp 0.5s ease-in-out forwards;
-}
-
-@keyframes rollDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes rollUp {
-  from {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
 }
 
 

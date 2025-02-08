@@ -1,24 +1,23 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Bios = ({ isOpen, onClose }) => {
-  // Close when clicking outside
-
-  if (!isOpen) return null; // Don't render if closed
-
-  
-  
   return (
-
-    <div className="backdrop fixed inset-0 bg-black bg-opacity-50 flex justify-center items-start pt-20" onClick={onClose}>
-      <motion.div
-        initial={{ y: "-100%", opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 0, opacity: "-100" }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="bios-container bg-white p-6 rounded-lg shadow-lg w-4/5 max-w-3xl"
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className="backdrop fixed inset-0 bg-black bg-opacity-50 flex justify-center items-start pt-20"
+          initial={{ y: "-100%", opacity: 0 }}  // Start off-screen
+          animate={{ y: 0, opacity: 1 }}  // Slide down
+          exit={{ y: "-100%", opacity: 0 }}  // Roll back up
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          onClick={onClose} // Click anywhere to close
+        >
+          <motion.div
+            className="bios-container bg-white p-6 rounded-lg shadow-lg w-4/5 max-w-3xl"
+            onClick={onClose} // Prevent close when clicking inside
+          >
        
-      >
         <h2>Melissa Bosworth</h2>
         <div className = 'biopic melissapic'>
             <div className="socmed"  ></div>
@@ -36,10 +35,11 @@ const Bios = ({ isOpen, onClose }) => {
 
         <p>Megan is committed to strengthening systems and empowering non-profits to break barriers and execute high level services through sustainable means and is grateful for the opportunity to work with such diverse entities striving toward the development of just and equitable programs.</p>
 
-      </motion.div>
-    </div>
-    
 
+        </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
