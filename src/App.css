@@ -30,11 +30,29 @@ a {
 /* Header */
 .App-header {
   background: #3f5a80;
-  color: rgb(178, 200, 212);
-  padding: 20px;
-  text-align: center;
-  font: normal Bold normal 1.2em/2.2em Helvetica;
-  text-shadow: 1px 1px 1px rgb(45, 54, 54);
+  display: flex;
+  justify-content: center;
+
+}
+
+.logo{
+  margin-top: 10px; 
+  width: 70vw;
+  height: 200px;
+  background-image: url("../public/images/blackLogo.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-position: center;
+}
+
+#logobox{
+  width: 100vw;
+  height: 200px;
+  background-image: url("../public/images/Color\ logo\ -\ no\ background.png");
+  background-color: #393a3a;
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-position: center;
 }
 
 /* Navigation */
@@ -53,9 +71,98 @@ a {
   text-shadow: 1px 1px 1px rgb(45, 54, 54);
 }
 
+.nav button {
+  color: rgb(225, 228, 220);
+
+  transition: color 0.3s;
+  text-shadow: 1px 1px 1px rgb(45, 54, 54);
+  background-color: #555;
+}
+
 .nav a:hover {
   color: #ff9900;
 }
+
+
+.bios-container, .backdrop {
+
+  position: absolute;
+  background-color:#000000;
+  z-index: 3;
+  height: auto;
+  width: 100%;
+  transform: translateY(-100%);
+  animation: rollDown 0.5s ease-in-out forwards;
+
+}
+
+.bios-container.closing {
+  animation: rollUp 0.5s ease-in-out forwards;
+}
+
+@keyframes rollDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rollUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+
+
+.backdrop {
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+
+.bios-container a{
+  color:#f77fe3;
+}
+
+.bios-container h2{
+  color:#abb2b8;
+  font: normal italic normal 2em/1em Helvetica;
+  margin-bottom: 6px;
+}
+
+.bios-container p{
+  color:#dddcd4;
+  font: normal normal normal 1.6em/1.2em Georgia;
+  margin: 20px;
+}
+
+.biopic{
+  height: 400px;
+  width: 400px;
+}
+
+.melissapic{
+  background-image: url("../public/images/melissapic.avif");
+  background-size: contain; 
+  background-repeat: no-repeat;
+}
+
+.meganpic{
+  background-image: url("../public/images/meganpic.avif");
+  background-size: contain; 
+  background-repeat: no-repeat;
+}
+
 
 /* Main sections */
 
@@ -133,7 +240,7 @@ a {
 
   margin-top: 30px;
   padding:30px;
-  background-color: #a78016;
+  background-color: #bbbbba;
 }
 
 .section-3 li {
@@ -207,7 +314,7 @@ a {
   text-align: center;
   height: 460px;
   width: 100%;
-  background-image: url('../public/images/RedRocks.jpg');
+  background-image: url("../public/images/RedRocks.jpg");
   background-repeat: no-repeat;
   background-size: 600px 450px ;
   background-position: center;
@@ -331,7 +438,9 @@ video{
      font: normal normal normal 1.5em/1em Helvetica;
   }
 
+  .logo{
 
+  }
   .meetwithus{
     height: 80px;
     font: normal normal normal 2em/1em Helvetica;
@@ -353,7 +462,7 @@ video{
   
 
   .section-3 li{
-    height: 50px;
+    height: 70px;
     width: 100%;
     font: normal normal normal 1em/1.3em Helvetica;
     text-align: center;
@@ -375,11 +484,14 @@ video{
     flex: 1 1 100%;
   }
 
-
-  .section-7 li{
-    font: normal normal normal 1.5em/1.5em Georgia;
+  .section-7{
+    height: 840px;
+    padding: 0;
   }
 
+  .section-7 h3{
+    font: normal bold normal 1.5em/1.5em Georgia;
+  }
   .section-10 {
     flex-direction: column;
   }
@@ -404,7 +516,6 @@ video{
 
   .sec{
     width:100%;
-    height: 30vh;
     border-width: 1px 0px 0px 0px;
     border-style: solid;
     border-color: black;

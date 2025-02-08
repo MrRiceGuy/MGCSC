@@ -1,12 +1,19 @@
 
+import React, { useState } from "react";
+import Bios from "./components/Bios";
 import './App.css';
 
 function App() {
+
+  const [showBios, setShowBios] = useState(false);
+
   return (
     <div className="App">
+      <Bios isOpen={showBios} onClose={() => setShowBios(false)} />
       <header className="App-header" title = "CSC">
-        <h1>Center for Social Creativity </h1>
-        <p alt = "CSU"></p>
+      <div className='logo'>
+      </div>
+
 
 
       </header>
@@ -16,12 +23,14 @@ function App() {
         <div> 
           
           <div className='top'>
-            <div className='logo'></div>
+
             <div className='nav'>
               <a href =''>Home</a>
-              <a href =''>Services</a>
-              <a href =''>Team</a>
-              <a href =''>Contact</a>
+              <a href ='#services'>Services</a>
+              <a onClick={() => setShowBios(true)} className="team-btn">
+        Meet the Team
+      </a>
+              <a href ='#contact'>Contact</a>
 
             </div>
           </div>
@@ -61,7 +70,7 @@ function App() {
               <li><h3>Is it hard to see how all the pieces fit together?</h3></li>
               <li><h3>Are the next steps unclear or confusing?</h3></li>
               <li><h3>Is your team overwhelmed, turning over, or struggling to hire?</h3></li>
-              <li><h3>Are you chronically under-resourced</h3></li>
+              <li><h3>Are you chronically under-resourced?</h3></li>
               <li><h3>Do you wonder how you can possibly do everything that is needed?</h3></li>
             </ul>
 
@@ -108,7 +117,7 @@ function App() {
                 </div>
           </div>
 
-          <div className='section-7'>
+          <div id = "services" className='section-7'>
          
                 <div className='sec'>
                   <h3>Assessment</h3>
@@ -153,17 +162,15 @@ function App() {
             <h2>We cultivate space for capacity, restore ecosystems, and shift paradigms with partners in meaningful change.</h2>
             <div className='lightbulb-pic'></div>
           </div>
+
           <div className='section-10'>
-            <div className='logobox'></div>
-            <div className = 'infobox'>
+
+            <div id = "contact" className = 'infobox'>
               <ul>
                 <li>Email us at info@verticalstrategies.net</li>
                 <li><a href = 'https://calendly.com/mbosworth-2'>Book with Melissa</a></li>
                 <li><a href = 'https://calendly.com/mgalaviz21'>Book with Megan</a></li>
               </ul>
-              
-              
-              
 
               <p>We are always pleased to hear from organizations interested in maximizing their capacity.  Contact us today.</p>
             </div>
@@ -174,7 +181,7 @@ function App() {
           </div>
         </div>
       </div>
-
+      <div id='logobox'></div>
       <div className='footer'> 2025</div>
 
   
