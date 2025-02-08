@@ -13,9 +13,6 @@ function App() {
       <header className="App-header" title = "CSC">
       <div className='logo'>
       </div>
-
-
-
       </header>
 
 
@@ -25,7 +22,6 @@ function App() {
           <div className='top'>
 
             <div className='nav'>
-              <a href =''>Home</a>
               <a href ='#services'>Services</a>
               <a onClick={() => setShowBios(true)} className="team-btn">
         Meet the Team
