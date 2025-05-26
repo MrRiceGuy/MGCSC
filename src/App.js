@@ -23,7 +23,7 @@ function App() {
 
             <div className='nav'>
               <a href ='#services'>Services</a>
-              <a onClick={() => setShowBios(true)} className="team-btn">
+              <a href onClick={() => setShowBios(true)} className="team-btn">
         Meet the Team
       </a>
               <a href ='#contact'>Contact</a>
@@ -90,8 +90,8 @@ function App() {
              </div>
 
              <div className = 'mountainWords'>
+              <h3>We help changemakers build resiliency.</h3>
              <h1>Built To Last</h1>
-             <h3>We help changemakers build resiliency.</h3>
              </div>
 
           </div>
@@ -163,10 +163,11 @@ function App() {
 
             <div id = "contact" className = 'infobox'>
               <ul>
-                <li>Email us at info@verticalstrategies.net</li>
                 <li><a href = 'https://calendly.com/mbosworth-2'>Book with Melissa</a></li>
                 <li><a href = 'https://calendly.com/mgalaviz21'>Book with Megan</a></li>
               </ul>
+
+              <h4>Email us at info@verticalstrategies.net</h4>
 
               <p>We are always pleased to hear from organizations interested in maximizing their capacity.  Contact us today.</p>
             </div>
